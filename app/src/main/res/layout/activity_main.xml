@@ -1,0 +1,262 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/layoutMain"
+    android:background="@drawable/background_portrait">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layoutMainV">
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutCondition"
+            android:columnCount="12"
+            android:rowCount="3"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView"
+                android:layout_row="0"
+                android:layout_column="8"
+                android:layout_columnSpan="4"
+                android:layout_rowSpan="2"
+                android:contentDescription="@string/desc_condition"
+                android:src="@drawable/condition_snowy"
+                android:layout_gravity="center_vertical" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_temp"
+                android:id="@+id/currentTempView"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnSpan="5"
+                android:textSize="50sp"
+                android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/degree"
+                android:id="@+id/currentDegreeView"
+                android:layout_column="6"
+                android:layout_row="0"
+                android:layout_gravity="bottom" />
+
+            <Space
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_row="0"
+                android:layout_column="7" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="11" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/min_temp"
+                android:id="@+id/minTempView"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/degree"
+                android:id="@+id/minDegreeView"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:layout_gravity="bottom" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_row="1"
+                android:layout_column="3"
+                android:layout_gravity="top" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/max_temp"
+                android:id="@+id/maxTempView"
+                android:layout_row="1"
+                android:layout_column="4"
+                android:layout_gravity="bottom" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/degree"
+                android:id="@+id/maxDegreeView"
+                android:layout_row="1"
+                android:layout_column="5"
+                android:layout_gravity="bottom" />
+
+        </GridLayout>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutWarning">
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="30dp" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/icyView"
+                    android:src="@drawable/warning_off_icy_road"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/desc_icyroad" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/windView"
+                    android:src="@drawable/warning_off_windy"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/desc_windy" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/floodView"
+                    android:src="@drawable/warning_on_flood"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/desc_flood" />
+
+            </TableRow>
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/visibilityView"
+                    android:src="@drawable/warning_off_visibility"
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/desc_visibility" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/slipperyView"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/warning_off_wet_road"
+                    android:contentDescription="@string/desc_wet" />
+
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/sunView"
+                    android:longClickable="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/warning_off_sunset"
+                    android:contentDescription="@string/desc_sunset" />
+            </TableRow>
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="50dp" />
+
+        </TableLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutBottom"
+            android:gravity="center">
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:id="@+id/backButton"
+                android:src="@drawable/arrow_left_off"
+                android:scaleType="fitCenter"
+                android:background="#00ffffff"
+                android:contentDescription="@string/dexc_previouslocation" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="fill_parent" />
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="@string/destination_button"
+                android:id="@+id/destinationButton" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="fill_parent" />
+
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:id="@+id/nextButton"
+                android:background="#00ffffff"
+                android:src="@drawable/arrow_right_off"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/desc_nextlocation" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
